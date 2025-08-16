@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove_shopping_cart" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_shopping_cart" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_shipping" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=storefront" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Group Project</title>
+
+  </head>
+
+  <!-- body -->
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="catagory">
+          <div class="head"><a href="index.html">Logo</a></div>
+          <div class="nav_item" id = "account"><a href=""><img src="person.png"></a></div>
+          <div class="nav_item" id = "btn_shoppingcart"><a href="shoppingcart.html"><img src="shopping_cart.png"></a></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- nav -->
+    <div class="container">
+      <div class="nav">
+        <div class="catagory">
+          <div class="nav_item">
+            <div class="dropdown">
+              <button class="dropbtn">By Product</button>
+              <div class="dropdown-content">
+                <a href="product.html">Blooming & Flower Box</a>
+                <a href="product.html">Bouquet</a>
+                <a href="product.html">Flower Stand</a>
+                <a href="product.html">Lifestyle & Gift Set</a>
+                <a href="product.html">Perserved Flower</a>
+                <a href="product.html">Vase Arrangement</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav_item">
+            <div class="dropdown">
+              <button class="dropbtn">By Occasion</button>
+              <div class="dropdown-content">
+                <a href="product.html">Anniversary</a>
+                <a href="product.html">Birthday</a>
+                <a href="product.html">Festive</a>
+                <a href="product.html">Get Well Soon</a>
+                <a href="product.html">Graduation</a>
+                <a href="product.html">Grand Openning</a>
+                <a href="product.html">Proposal</a>
+                <a href="product.html">Romance</a>
+                <a href="product.html">Same Day Delivery</a>
+                <a href="product.html">Sympathy</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav_item">
+            <div class="dropdown">
+              <button class="dropbtn">Service</button>
+                <div class="dropdown-content">
+                  <a href="product.html">Corporate Floral Solution</a>
+                  <a href="product.html">Flower subscription</a>
+                </div>
+              </div>
+          </div>
+          <div class="nav_item" id = "btn_store"><a href="stores.html"><img src="storefront.png"></a></div>
+          <div class="nav_item" id = "btn_shipping"><a href="orderDelivery.html"><img src="local_shipping.png"></a></div>
+      </div>
+    </div>
+
+<!-- Corporate Order -->
+  <div class="container">
+    <div class="corporateOrder">
+      <p id="co_title">Corporate Order</p>
+      <div class="co_button" href="">Shop Now</div>
+      <br>
+      <br>
+      <p id="co_title">Order Enquiry</p>
+      <p class="co_para">We will respond via email address you provided.</p>
+    </div>
+    <br>
+    <div class="contactUS">
+      <form>
+        <label for="company_name" required>Company Name</label></br>
+        <input type="text" id="company_name" name="company_name"><br><br>
+
+        <label for="customer_name" required>Name*</label></br>
+        <input type="text" id="customer_name" name="customer_name"><br><br>
+
+        <label for="email" required>Email*</label></br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="phone">Phone Number</label></br>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <label for="cu_subject" required>Subject*</label></br>
+        <select class="cu_dropbtn" id="cu_subject" name="subject">
+          <div class="dropdown-option">
+            <option>Please select</option>
+            <option>Online Order</option>
+            <option>Offline Order</option>
+            <option>Floral Subscription</option>
+            <option>Others</option>
+          </div>
+        </select>
+        <br>
+        <br>
+        <label for="cu_msg" required>Your message*</label>
+        <textarea id="cu_msg" name="cu_msg" maxlength="100" row="5" cols="50" placeholder="Leave your message here. Maximum 100 characters limited."></textarea>
+        <br>
+        <br>
+        <span class="required">* Required</span>
+        <br>
+        <br>
+        <input id="contact_submit" type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  </div>
+<!-- Footer -->
+    <div class="container">
+      <div class="catagory">  
+        <div class="footer">
+          <a href="index.html">Logo</a>
+        </div>
+        <div class="footer">
+          <label for="kit_name"><b>Keep in touch</b></label>
+          <br>
+          <br>
+          <div class="kit_email">
+            <form>
+              <input type="text" name="kit_name" id="kit_name" placeholder="Enter your email">
+              <button type="submit" value="Subscribe" onclick="thankyou()"><img src="paper-plane.png"></button>
+            </form>
+            <br>
+            <br>
+          <a
+            href="https://www.facebook.com/"
+            class="dropdown-item"
+            target="_blank"
+          >
+            <img
+              src="fb_icon.png"
+              style="width: 25px; height: 25px"
+              alt="Facebook"
+              title="Facebook"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/"
+            class="dropdown-item"
+            target="_blank"
+          >
+            <img
+              src="ig_icon.png"
+              style="width: 25px; height: 25px"
+              alt="Instagram"
+              title="Instagram"
+            />
+          </a>
+          </div>
+        </div>
+        <div class="footer">
+          <span><b>Online Purchase</b></span>
+          <ul>
+            <li><a href="">Promotion</a></li>
+            <li><a href="orderDelivery.html">Order & Delivery</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+          </ul>
+        </div>
+        <div class="footer">
+          <span><b>About Company</b></span>
+          <ul>
+            <li><a href="ourstory.html">About Us</a></li>
+            <li><a href="corporateOrder.html">Corporate Order</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="termsNConditions.html">Terms & Condition</a></li>
+          </ul>
+        </div>
+    </div>
+  </div>
+  </div>
+  </body>
+</html>
