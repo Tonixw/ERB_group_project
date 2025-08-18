@@ -410,13 +410,17 @@ a:hover {
 	box-shadow: 0 6px 20px rgba(226, 61, 111, 0.3);
 }
 
-.cart-count {
+#btn_shoppingcart {
 	position: relative;
-	top: -40px;
-	right: -15px;
+}
+
+.cart-count {
+	position: absolute;
+	top: -8px;
+	right: -8px;
 	background: var(--accent-color);
 	color: white;
-	font-size: 0.8rem;
+	font-size: 15px;
 	font-weight: 600;
 	width: 22px;
 	height: 22px;
