@@ -4,6 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
   <link rel="stylesheet"
@@ -32,7 +40,7 @@
 <body>
   <div class="header_container">
     <div class="logo">
-      <a href="index.html">Logo</a>
+      <a href="index.html"><img src="image/image1.png"></a>
     </div>
     <div class="nav_item">
       <div id="btn_store">
@@ -61,34 +69,36 @@
       <div class="dropdown">
         <button class="dropbtn">By Product</button>
         <div class="dropdown-content">
-          <a href="product.html">Blooming & Flower Box</a>
-          <a href="product.html">Bouquet</a>
-          <a href="product.html">Flower Stand</a>
-          <a href="product.html">Lifestyle & Gift Set</a>
-          <a href="product.html">Perserved Flower</a>
-          <a href="product.html">Vase Arrangement</a>
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optBloFloBox')"">Blooming & Flower Box</a>
+          <a onclick=" displayProd('optBouq')">Bouquet</a>
+          <a onclick="displayProd('optFloStd')">Flower Stand</a>
+          <a onclick="displayProd('optLifeGift')">Lifestyle & Gift Set</a>
+          <a onclick="displayProd('optPreFlo')">Preserved Flower</a>
+          <a onclick="displayProd('optVaseArra')">Vase Arrangement</a>
         </div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">By Occasion</button>
         <div class="dropdown-content">
-          <a href="product.html">Anniversary</a>
-          <a href="product.html">Birthday</a>
-          <a href="product.html">Festive</a>
-          <a href="product.html">Get Well Soon</a>
-          <a href="product.html">Graduation</a>
-          <a href="product.html">Grand Openning</a>
-          <a href="product.html">Proposal</a>
-          <a href="product.html">Romance</a>
-          <a href="product.html">Same Day Delivery</a>
-          <a href="product.html">Sympathy</a>
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optAnniv')">Anniversary</a>
+          <a onclick="displayProd('optBirth')">Birthday</a>
+          <a onclick="displayProd('optFest')">Festive</a>
+          <a onclick="displayProd('optGetWell')">Get Well Soon</a>
+          <a onclick="displayProd('optGrad')">Graduation</a>
+          <a onclick="displayProd('optGrandOpen')">Grand Openning</a>
+          <a onclick="displayProd('optPropo')">Proposal</a>
+          <a onclick="displayProd('optRoman')">Romance</a>
+          <a onclick="displayProd('optSamDayDel')">Same Day Delivery</a>
+          <a onclick="displayProd('optSympathy')">Sympathy</a>
         </div>
       </div>
       <div class="dropdown">
         <button class="dropbtn">Service</button>
         <div class="dropdown-content">
-          <a href="product.html">Corporate Floral Solution</a>
-          <a href="product.html">Flower subscription</a>
+          <a onclick="displayProd('optCorpFloSol')">Corporate Floral Solution</a>
+          <a onclick="displayProd('optFloSub')">Flower subscription</a>
         </div>
       </div>
     </div>
@@ -97,53 +107,72 @@
   <div class="content">
     <div class="container">
       <div class="catagory">
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optAnniv optBirth optRoman"><a href="#">
+            <p>Jade</p>
+            <img width="100%" height="100%" src="./image/birthday/Jade.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optLifeGift optBirth optRoman"><a href="#">
+            <p>Fairytale Forever</p>
+            <img width="100%" height="100%" src="./image/birthday/Fairytale Forever.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optBouq optVaseArra optAnniv optBirth optRoman"><a href="#">
+            <p>Overload - 18 Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Overload - 18 Roses.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optBouq optAnniv optBirth optGrad optRoman"><a href="#">
+            <p>Pink Moment</p>
+            <img width="100%" height="100%" src="./image/birthday/Pink Moment.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optBloFloBox optLifeGift optBirth optGrad"><a href="#">
+            <p>Summer Happiness</p>
+            <img width="100%" height="100%" src="./image/birthday/Summer Happiness.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optBouq optAnniv optBirth optRoman"><a href="#">
+            <p>Champagne Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Champagne Roses.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optBloFloBox optBirth optGrad"><a href="#">
+            <p>Luna</p>
+            <img width="100%" height="100%" src="./image/birthday/Luna.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optCondo"><a href="#">
+            <p>Elegant Twist</p>
+            <img width="100%" height="100%" src="./image/condolence/Elegant Twist.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optVaseArra optCondo"><a href="#">
+            <p>I'm with you</p>
+            <img width="100%" height="100%" src="./image/condolence/I am with you.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFloStd optCondo"><a href="#">
+            <p>Warm Respect</p>
+            <img width="100%" height="100%" src="./image/condolence/Warm Respect.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFloStd optCondo"><a href="#">
+            <p>Devotion</p>
+            <img width="100%" height="100%" src="./image/condolence/Devotion.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFest"><a href="#">
+            <p>Fruit Flower Mix</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Fruit Flower Mix.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFest optGetWell"><a href="#">
+            <p>Vitamin Mania Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Vitamin Mania Fruit Basket.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFest"><a href="#">
+            <p>Small Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Small Fruit Basket.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFest"><a href="#">
+            <p>Medium Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Medium Fruit Basket.jpg">
           </a></div>
-        <div class="index_product"><a href="product.html">
-            <p>Lorem ipsum odor amet,</p>
+        <div class="index_product optAll optFest"><a href="#">
+            <p>The Big Smile Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/The Big Smile Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll" style="display: none"><a href="#">
+            <p>No product/service searched</p>
           </a></div>
       </div>
     </div>
@@ -208,7 +237,9 @@
   <div class="container">
     <div class="catagory">
       <div class="footer">
-        <a href="index.html">Logo</a>
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
       </div>
       <div class="footer">
         <label for="kit_name"><b>Keep in touch</b></label>
@@ -217,15 +248,15 @@
         <div class="kit_email">
           <form>
             <input type="text" name="kit_name" id="kit_name" placeholder="Enter your email">
-            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="paper-plane.png"></button>
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
           </form>
           <br>
           <br>
           <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
-            <img src="fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
           </a>
           <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
-            <img src="ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
           </a>
         </div>
       </div>
@@ -271,6 +302,33 @@
       window.open("greeting1.html"); // Replace with your desired URL
     };
   </script>
+
+  <script>
+    function displayProd(name) {
+      let opt = document.getElementsByClassName("optAll");
+      var prodSearched = false;
+      var j;
+      for (j = 0; j < opt.length; j++) {
+        if (opt[j].classList.contains(name)) {
+          prodSearched = true;
+          if (opt[j].style.display === "block") {
+            continue;
+          } else {
+            opt[j].style.display = "block";
+          }
+        } else {
+          opt[j].style.display = "none";
+        }
+      }
+      j = j - 1;
+      if (prodSearched) {
+        opt[j].style.display = "none";
+      } else {
+        opt[j].style.display = "block";
+      }
+    };
+  </script>
+
 </body>
 
 </html>

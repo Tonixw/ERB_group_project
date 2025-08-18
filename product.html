@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link
+    <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet"
@@ -35,7 +35,7 @@
 <body>
   <div class="header_container">
     <div class="logo">
-      <a href="index.html">Logo</a>
+      <a href="index.html"><img src="image/image1.png"></a>
     </div>
     <div class="nav_item">
       <div id="btn_store">
@@ -179,24 +179,24 @@
   <div class="container">
     <div class="catagory">
       <div class="footer">
-        <a href="index.html">Logo</a>
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
       </div>
       <div class="footer">
-        <label for="kit_name"><b>Keep in touch</b></label>
+        <label for="kit_email"><b>Keep in touch</b></label>
         <br>
-        <br>
-        <div class="kit_email">
-          <form>
-            <input type="text" name="kit_name" id="kit_name" placeholder="Enter your email">
-            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="paper-plane.png"></button>
+        <div class="keepintouch">
+          <form id="kit_email">
+            <input type="email" name="kit_email" id="kit_email" placeholder="Enter your email">
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
           </form>
           <br>
-          <br>
           <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
-            <img src="fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
           </a>
           <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
-            <img src="ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
           </a>
         </div>
       </div>
@@ -221,6 +221,27 @@
     </div>
   </div>
   </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    function thankyou() {
+      window.open("greeting1.html"); // Replace with your desired URL
+    };
+  </script>
 </body>
 
 </html>

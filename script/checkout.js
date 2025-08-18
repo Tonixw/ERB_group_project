@@ -162,5 +162,5 @@ function updateTotalPrice() {
 }
 
 function goToPaymentPage() {
-   window.location.href = "payment.html"
+   window.location.href = "checkout.html"
 }
