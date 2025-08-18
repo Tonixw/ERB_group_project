@@ -852,20 +852,13 @@ textarea {
 .checkout {
 	width: 100%;
 	min-height: 50vh;
-	display: grid;
 	box-sizing: border-box;
-	padding: 0px;
-	margin: 0px;
+	text-align: center;
 }
 
 .checkout > div.cart_section {
-	grid-template-columns: 60% 40%;
-}
-
-.cartsection {
-	width: 100%;
-	display: grid;
-	grid-template-columns: auto;
+	padding: 1rem;
+	text-align: center;
 }
 
 /* basket */
@@ -885,17 +878,17 @@ textarea {
 	border-radius: 5px;
 	text-align: center;
 	justify-self: center;
-	width: 70%;
-	height: 40px;
 	background-color: #000000;
 	color: #ffffff;
+}
+
+.cart_info {
+	text-align: center;
 }
 
 /* grid setting for small mobile */
 @media screen and (max-width: 500px) {
 	.checkout div.cart_section {
-		display: grid;
-		grid-template-columns: auto;
 		row-gap: 2px;
 		padding: 2px;
 	}
@@ -905,8 +898,6 @@ textarea {
 
 @media screen and (min-width: 501px) and (max-width: 767px) {
 	.checkout div.cart_section {
-		display: grid;
-		grid-template-columns: auto auto;
 		column-gap: 2px;
 		row-gap: 2px;
 		padding: 2px;
@@ -917,8 +908,6 @@ textarea {
 
 @media screen and (min-width: 768px) {
 	.checkout div.cart_section {
-		display: grid;
-		grid-template-columns: auto auto;
 		column-gap: 2px;
 		row-gap: 2px;
 		padding: 2px;
