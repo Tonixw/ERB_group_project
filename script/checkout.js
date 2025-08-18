@@ -1,33 +1,75 @@
 window.onload = function () {
-   const cartChectout = JSON.parse(localStorage.getItem('cart')) || [];
+   console.log('Checkout page loaded');
+   
+   // Check if localStorage is available
+   if (typeof localStorage !== 'undefined') {
+      console.log('localStorage is available');
+   } else {
+      console.log('localStorage is NOT available');
+      return;
+   }
+   
+   // Get raw data from localStorage
+   const rawCart = localStorage.getItem('cart');
+   console.log('Raw cart data:', rawCart);
+   
+   // Try to parse the cart data
+   let cartChectout = [];
+   try {
+      cartChectout = rawCart ? JSON.parse(rawCart) : [];
+      console.log('Parsed cart data:', cartChectout);
+   } catch (error) {
+      console.error('Error parsing cart data:', error);
+      cartChectout = [];
+   }
+   
+   // Check if cart data is valid
+   if (Array.isArray(cartChectout)) {
+      console.log('Cart is an array with', cartChectout.length, 'items');
+   } else {
+      console.log('Cart is not an array:', typeof cartChectout);
+      cartChectout = [];
+   }
+      
    displayCartForCheckout(cartChectout);
 }
 
 //display all cart items in the cart display area before payment
 function displayCartForCheckout(cartChectout) {
+   console.log('Displaying cart items:', cartChectout);
+   
    const cartDisplay = document.querySelector('.cart-display');
+   if (!cartDisplay) {
+      console.error('Cart display element not found!');
+      return;
+   }
 
    // Clear previous display
    cartDisplay.innerHTML = '';
 
-   if (cartChectout.length === 0) {
+   if (cartChectout.length == 0) {
       cartDisplay.textContent = 'Your cart is empty.';
       return;
    }
 
+   
    let subtotalPrice = 0;
    let totalPrice = 0;
 
+
+
    cartChectout.forEach(item => {
       subtotalPrice = item.price * item.quantity;
+
+      console.log(`Subtotal for ${item.name}: $${subtotalPrice.toFixed(2)}`);
       //change according to checkout layout
       const row = document.createElement('div');
       row.classList.add('cart-row');
 
       // Title
-      const title = document.createElement('span');
-      title.textContent = item.title;
-      title.classList.add('item-title');
+      const name = document.createElement('span');
+      name.textContent = item.name;
+      name.classList.add('item-name');
 
       // Quantity controls
       const quantityContainer = document.createElement('div');
@@ -69,7 +111,7 @@ function displayCartForCheckout(cartChectout) {
       totalPrice += subtotalPrice;
 
       // Add everything to the row
-      row.appendChild(title);
+      row.appendChild(name);
       row.appendChild(quantityContainer);
       row.appendChild(price);
       row.appendChild(subtotal);

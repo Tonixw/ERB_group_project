@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
   <link rel="stylesheet"
@@ -19,10 +22,10 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="style/style.css">
-  <script src="script/shoppingCart.js"></script>
   <script src="script/checkout.js"></script>
-
+  <script src="script/shoppingCart.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
   <title>Group Project</title>
 
 </head>
@@ -97,57 +100,27 @@
   <!-- body -->
   <div class="container">
     <div class="container_product">
-      <div class="container_left">
-        <div class="intro_product1">
-          <h3 style="padding-left: 10px;">Shopping Cart</h3>
-          <p>Purchase details</p>
-        </div>
-        <div class="checkout-container">
-          <div class="cart-display"></div>
-          <div class="checkout-total"></div>
-        </div>
+      <div class="checkout-product">
+        <h3>Shopping Cart</h3>
+        Purchase details:
       </div>
-      <div class="container_right">
-        <div class="intro_product">
-          <p>Purchase details</p>
+      <div class="checkout-container">
+        <div class="checkout-item">
+          <span class="item-name">Product Name</span>
+          <span class="item-quantity">Quantity</span>
+          <span class="item-price">Price</span>
+          <span class="subtotal">Subtotal</spam>
         </div>
         <div class="cart-display"></div>
-        <div class="intro_product">
-          <p>Total</p>
-        </div>
-        <div class="intro_product">
-          <p>Lorem ipsum odor amet,</p>
-        </div>
-        <div class="intro_product">
-          <p>Delivery details</p>
-        </div>
-        <div class="intro_product">
-          <p>Store Pickup</p>
-        </div>
-        <div class="intro_product">
-          <p>Choose a date and time.</p>
-        </div>
-        <div class="intro_product">
-          <p>Lorem ipsum odor amet,</p>
-        </div>
-        <div class="intro_product">
-          <p>Lorem ipsum odor amet,</p>
-        </div>
-        <div class="intro_product">
-          <p>Lorem ipsum odor amet,</p>
-        </div>
-        <div class="intro_product">
-          <p>Lorem ipsum odor amet,</p>
-        </div>
-        <div class="intro_product">
-          <p>Lorem ipsum odor amet,</p>
+        <div class="total-container">
+          <span>Total: </span>
+          <div class="checkout-total"></div>
         </div>
         <div class="payment-container">
           <button onclick="goToPaymentPage()">Checkout</button>
         </div>
       </div>
     </div>
-  </div>
   </div>
 
   <!-- Footer -->
@@ -196,7 +169,6 @@
     </div>
   </div>
   </div>
-
 </body>
 
 </html>

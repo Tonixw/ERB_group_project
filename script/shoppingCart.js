@@ -3,15 +3,20 @@
 //define shopping array to hold cart items
 
 //show cart items in every product page
-window.onload = function () {
+document.addEventListener('DOMContentLoaded', function() {
    updateCartCount();
-}
+});
 
 const products = [
   { id: 1, name: "T-shirt", quantity : 0, price: 20 },
-  { id: 2, name: "Jeans", quantity : 0, price: 40 },
+  { id: 2, name: "Jegoans", quantity : 0, price: 40 },
   { id: 3, name: "Cap", quantity: 0, price: 10 }
 ];
+
+// Use a function to get cart to avoid global variable conflicts
+function getCart() {
+    return JSON.parse(localStorage.getItem("cart")) || [];
+}
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -36,11 +41,21 @@ function decreaseQuantity(button) {
 
 //for button to add the product in product page to cart
 function addToCartFromProductPage(button) {
+   console.log('Adding product to cart');
+   
    const productContainer = button.closest('.container_product');
+   if (!productContainer) {
+      console.error('Product container not found!');
+      return;
+   }
 
    const productId = parseInt(productContainer.querySelector('.product-id').innerText);
 
    const quantityDiv = productContainer.querySelector('.quantity-control');
+   if (!quantityDiv) {
+      console.error('Quantity control not found!');
+      return;
+   }
    
    const quautitySpan = quantityDiv.querySelector('.quantity');
 
@@ -70,12 +85,15 @@ function addToCart(product, quantity) {
    localStorage.setItem('cart', JSON.stringify(cart)); 
 
    updateCartCount();   
+
+   console.log(`Cart updated: ${JSON.stringify(cart)}`); 
 }
 
 //remove item from cart array
 //if the quantity is greater than 1, decrease the quantity
 //if the quantity is 1, remove the item from the cart
 function removeFromCart(product, quantity) {
+   let cart = getCart();
    const existingItem = cart.find(item => item.id === product.id);
    if (existingItem) {
       existingItem.quantity -= quantity;
@@ -90,15 +108,18 @@ function removeFromCart(product, quantity) {
 
 //update cart icon with total quantity of items
 function updateCartCount() {
+   let cart = getCart();
    const totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
 
    //default to 0 if totalQuantity is less than 0
    document.querySelector('.cart-count').innerHTML = totalQuantity > 0 ? totalQuantity : 0;
+
+   console.log(`Cart count updated: ${totalQuantity}`);
 }
 
 //
 function goToCheckoutPage() {
-   window.location.href = "checkout.html"
+   window.location.href = "shoppingcart.html"
 }
 
 function clearCart() {
