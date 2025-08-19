@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/header.css">
   <script src="script/shoppingCart.js"></script>
+  <script src="script/miniCart.js"></script>
 
   <title>Group Project</title>
 
@@ -45,12 +46,23 @@
           <i class="fa-solid fa-truck"></i>
         </a>
       </div>
-      <div id="btn_shoppingcart">
+      <div id="btn_shoppingcart" class="cart-container">
         <a href="shoppingcart.html">
           <i class="fa-solid fa-cart-shopping">
-            <span class="cart-count">0</span>
           </i>
+          <span class="cart-count">0</span>
         </a>
+        <div class="mini-cart" id="mini-cart">
+          <div id="mini-cart-items">
+            <!-- Cart items will be populated here -->
+          </div>
+          <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+              <span>Total: $<span id="mini-cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="goToCheckoutPage()">View Cart</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -59,11 +71,38 @@
   <div class="nav">
     <div class="nav_item">
       <div class="dropdown">
+        <button class="dropbtn">By Product</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optBloFloBox')">Blooming & Flower Box</a>
+          <a onclick="displayProd('optBouq')">Bouquet</a>
+          <a onclick="displayProd('optFloStd')">Flower Stand</a>
+          <a onclick="displayProd('optLifeGift')">Lifestyle & Gift Set</a>
+          <a onclick="displayProd('optPreFlo')">Preserved Flower</a>
+          <a onclick="displayProd('optVaseArra')">Vase Arrangement</a>
+        </div>
+      </div>
+      <div class="dropdown">
         <button class="dropbtn">By Occasion</button>
         <div class="dropdown-content">
-          <a href="grandopening.html">Grand Opening</a>
-          <a href="graduation.html">Graduation</a>
-          <a href="romance.html">Romance</a>
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optAnniv')">Anniversary</a>
+          <a onclick="displayProd('optBirth')">Birthday</a>
+          <a onclick="displayProd('optFest')">Festive</a>
+          <a onclick="displayProd('optGetWell')">Get Well Soon</a>
+          <a onclick="displayProd('optGrad')">Graduation</a>
+          <a onclick="displayProd('optGrandOpen')">Grand Opening</a>
+          <a onclick="displayProd('optPropo')">Proposal</a>
+          <a onclick="displayProd('optRoman')">Romance</a>
+          <a onclick="displayProd('optSamDayDel')">Same Day Delivery</a>
+          <a onclick="displayProd('optSympathy')">Sympathy</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Service</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optCorpFloSol')">Corporate Floral Solution</a>
+          <a onclick="displayProd('optFloSub')">Flower subscription</a>
         </div>
       </div>
     </div>
@@ -210,6 +249,30 @@
 
     function thankyou() {
       window.open("greeting1.html"); // Replace with your desired URL
+    };
+
+    function displayProd(name) {
+      let opt = document.getElementsByClassName("optAll");
+      var prodSearched = false;
+      var j;
+      for (j = 0; j < opt.length; j++) {
+        if (opt[j].classList.contains(name)) {
+          prodSearched = true;
+          if (opt[j].style.display === "block") {
+            continue;
+          } else {
+            opt[j].style.display = "block";
+          }
+        } else {
+          opt[j].style.display = "none";
+        }
+      }
+      j = j - 1;
+      if (prodSearched) {
+        opt[j].style.display = "none";
+      } else {
+        opt[j].style.display = "block";
+      }
     };
   </script>
 </body>
