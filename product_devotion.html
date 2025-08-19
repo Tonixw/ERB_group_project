@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_shipping" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=storefront" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <script src="script/shoppingCart.js"></script>
+
+  <title>Group Project</title>
+
+</head>
+
+<!-- body -->
+
+<body>
+  <div class="header_container">
+    <div class="logo">
+      <a href="index.html"><img src="image/image1.png"></a>
+    </div>
+    <div class="nav_item">
+      <div id="btn_store">
+        <a href="stores.html">
+          <i class="fa-solid fa-store"></i>
+        </a>
+      </div>
+      <div id="btn_shipping">
+        <a href="orderDelivery.html">
+          <i class="fa-solid fa-truck"></i>
+        </a>
+      </div>
+      <div id="btn_shoppingcart">
+        <a href="shoppingcart.html">
+          <i class="fa-solid fa-cart-shopping">
+            <span class="cart-count">0</span>
+          </i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <div class="nav">
+    <div class="nav_item">
+      <div class="dropdown">
+        <button class="dropbtn">By Occasion</button>
+        <div class="dropdown-content">
+          <a href="grandopening.html">Grand Opening</a>
+          <a href="graduation.html">Graduation</a>
+          <a href="romance.html">Romance</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="catagory">
+      <div class="container_product">
+        <!-- <div class="intro_photo"> -->
+        <div id="product_photo">
+          <span><b>Devotion</b></span>
+          <br>
+          <br>
+          <img src="./image2/condolence/Devotion.jpg">
+        </div>
+      </div>
+      <div class="container_product">
+        <div class="intro_product">
+        <b>Product Name:</b>
+        Devotion
+        </div>
+        <div class="intro_product">
+        <b>Product ID:</b>
+        <div class="product-id">EFP0011</div>
+        </div>
+        <div class="intro_product">
+        <b>Floral components:</b>
+        Lily and Orchid
+        </div>
+        <div class="intro_product">
+          <button type="button" class="collapsible">Storage and Care Guide</button>
+          <div class="remarks">
+            <ul>
+              <li>Keep the floral foam constantly wet, add around ? cup of fresh water every 2-3 days.</li><br>
+              <li>When adding water, find a spot on the back of the arrangement and pour it gently onto the foam.</li><br>
+              <li>Remove wilting flowers and guard petals to keep it fresh.</li><br>
+              <li>Keep your flowers away from direct sunlight.</li><br>
+              <li>Avoid sitting your flowers beside ripening fruit or vegetables, as ripening fruit produces invisible gases called ethylene, which cause the flowers to wilt or deteriorate more quickly.</li>
+            </ul>
+          </div>
+          <button type="button" class="collapsible">Remarks</button>
+          <div class="remarks">
+            <ul>
+              <li>Photos are for reference only. Shade of color may vary due to seasonality. All flowers are subject to availability. In the event that a particular flower is unavailable, our florists will select a suitable substitution based on color, shape and value, assured the bouquet will still have the same style and variety and value.</li><br>
+              <li>Place your order before 6pm for delivery in 3-7 days.</li><br>
+              <li>The order may be cancelled if we failed to contact customer by phone.</li><br>
+              <li>As flowers are natural products, colors may vary from that shown in the photo reference. Pictures and descriptions are for indication only. The final product may consist of different type or color of flowers within the bouquet.</li><br>
+              <li>Once an order has been placed and confirmed, no cancellation or changes will be accepted, all flowers sold are non-exchangeable and non-refundable.</li><br>
+              <li>Shopping bag is mandatory for Love Goes On, Flower Box and Wedding products.</li><br>
+              <li>Promotions are not applicable to seasonal items such as Valentine  s Day, delivery cost, charges of shopping bag and message card.</li><br>
+              <li>For floral items, only specific collection will be offered in Valentine's Day period.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="intro_product">
+        <b>Price:</b>$1100
+        </div>
+
+        <div class="intro_product">
+          <span>Do you need a handwritten message card?</span>
+          <form id="product_form">
+            <input type="radio" id="wcard" name="msgcard">
+            <label for="wcard">Yes</label>
+            <input type="radio" id="wocard" name="msgcard" checked>
+            <label for="wocard">No
+            </label>
+          </form>
+          <b>Message</b>
+          <textarea id="product_textarea" rows="3" cols="10" placeholder="Leave your message here."></textarea>
+          <div class="quantity-control">
+            Quantity:
+            <button onclick="decreaseQuantity(this)">-</button>
+            <span class="quantity">0</span>
+            <button onclick="increaseQuantity(this)">+</button>
+          </div>
+          <button onclick="addToCartFromProductPage(this)">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="catagory">
+      <div class="footer">
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
+      </div>
+      <div class="footer">
+        <label for="kit_email"><b>Keep in touch</b></label>
+        <br>
+        <div class="keepintouch">
+          <form id="kit_email">
+            <input type="email" name="kit_email" id="kit_email" placeholder="Enter your email">
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
+          </form>
+          <br>
+          <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+          </a>
+        </div>
+      </div>
+      <div class="footer">
+        <span><b>Online Purchase</b></span>
+        <ul>
+          <li><a href="orderDelivery.html">Order & Delivery</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <span><b>About Company</b></span>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="termsNConditions.html">Terms & Condition</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    function thankyou() {
+      window.open("greeting1.html"); // Replace with your desired URL
+    };
+  </script>
+</body>
+
+</html>
