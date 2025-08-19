@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="style/style.css">
   <link rel="stylesheet" href="style/header.css">
   <script src="script/shoppingCart.js"></script>
+  <script src="script/miniCart.js"></script>
 
   <title>Group Project</title>
 
@@ -48,12 +49,23 @@
           <i class="fa-solid fa-truck"></i>
         </a>
       </div>
-      <div id="btn_shoppingcart">
+      <div id="btn_shoppingcart" class="cart-container">
         <a href="shoppingcart.html">
           <i class="fa-solid fa-cart-shopping">
           </i>
           <span class="cart-count">0</span>
         </a>
+        <div class="mini-cart" id="mini-cart">
+          <div id="mini-cart-items">
+            <!-- Cart items will be populated here -->
+          </div>
+          <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+              <span>Total: $<span id="mini-cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="goToCheckoutPage()">View Cart</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
