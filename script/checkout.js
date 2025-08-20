@@ -49,6 +49,7 @@ function displayCartForCheckout(cartChectout) {
 
    if (cartChectout.length == 0) {
       cartDisplay.textContent = 'Your cart is empty.';
+      document.querySelector(".checkout-total").innerText = '$0.00';
       return;
    }
 
@@ -110,11 +111,20 @@ function displayCartForCheckout(cartChectout) {
 
       totalPrice += subtotalPrice;
 
+      // Remove button
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = '×';
+      removeBtn.classList.add('remove-btn');
+      removeBtn.onclick = function() {
+         removeItemFromCart(item.id);
+      };
+
       // Add everything to the row
       row.appendChild(name);
       row.appendChild(quantityContainer);
       row.appendChild(price);
       row.appendChild(subtotal);
+      row.appendChild(removeBtn);
 
       cartDisplay.appendChild(row);
 
@@ -161,6 +171,45 @@ function updateTotalPrice() {
 
 }
 
+function removeItemFromCart(productId) {
+   // Get current cart
+   let cart = JSON.parse(localStorage.getItem('cart')) || [];
+   
+   // Remove the item with the matching ID
+   cart = cart.filter(item => item.id !== productId);
+   
+   // Save back to localStorage
+   localStorage.setItem('cart', JSON.stringify(cart));
+   
+   // If cart is empty after removing item
+   if (cart.length === 0) {
+      // Clear the cart display
+      const cartDisplay = document.querySelector('.cart-display');
+      if (cartDisplay) {
+         cartDisplay.textContent = 'Your cart is empty.';
+      }
+      // Reset the total to $0.00
+      const totalDisplay = document.querySelector('.checkout-total');
+      if (totalDisplay) {
+         totalDisplay.innerText = '$0.00';
+      }
+   } else {
+      // Update the display with remaining items
+      displayCartForCheckout(cart);
+   }
+
+   // Update mini cart and cart count
+   if (typeof updateMiniCart === 'function') {
+      updateMiniCart();
+   }
+   if (typeof updateCartCount === 'function') {
+      updateCartCount();
+   }
+   
+   // Update cart count in header
+   updateCartCount();
+}
+
 function goToPaymentPage() {
-   window.location.href = "checkout.html"
+   window.location.href = "checkout.html";
 }

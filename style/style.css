@@ -50,7 +50,7 @@ h6 {
   align-items: center;
   background: linear-gradient(
     135deg,
-    var(--primary-color),
+    white,
     var(--primary-dark)
   );
   opacity: 3;
@@ -108,7 +108,7 @@ h6 {
 }
 
 .logo img {
-  height: 50px;
+  height: 70px;
   width: auto;
   transition: transform 0.3s ease;
 }
@@ -298,6 +298,16 @@ a:hover {
   grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem;
+}
+
+.intro_product > button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 #btn_store {
@@ -596,7 +606,7 @@ textarea {
 
 .checkout-container .checkout-item {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
@@ -619,7 +629,7 @@ textarea {
 
 .checkout-container .cart-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
   align-items: center;
   gap: 1rem;
   padding: 0.5rem;
@@ -958,5 +968,55 @@ div.faq_cu {
   padding-left: 1rem;
   text-indent: 20px;
   text-align: justify;
+}
+
+/* Cart row and remove button styles */
+.cart-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.item-name {
+  flex: 2;
+}
+
+.quantity-control {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.item-price, .item-subtotal {
+  flex: 1;
+  text-align: right;
+}
+
+.remove-btn {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--error-color);
+  background: transparent;
+  color: var(--error-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  justify-self: end;
+}
+
+.remove-btn:hover {
+  background: var(--error-color);
+  color: white;
+}
+
+.subtotal-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  font-weight: bold;
 }
 /* End privacy webpage */

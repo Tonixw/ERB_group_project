@@ -73,12 +73,13 @@ function addToCartFromProductPage(button) {
    const quantity = parseInt(quautitySpan.innerText);
 
    const product = products.find(item => item.id == productId);
-   
-   if (product) {
-      addToCart (product, quantity);
-   }
 
-   console.log(`Added ${product.name} with quantity ${quantity} to cart.`);
+   if (product && quantity > 0) {
+      addToCart(product, quantity);
+      alert(`Added ${product.name} with quantity ${quantity} to cart.`);
+   } else {
+      alert('Please select a valid quantity before adding to cart.');
+   }
 }
 
 // add item to cart array
@@ -124,8 +125,6 @@ function updateCartCount() {
 
    //default to 0 if totalQuantity is less than 0
    document.querySelector('.cart-count').innerHTML = totalQuantity > 0 ? totalQuantity : 0;
-
-   console.log(`Cart count updated: ${totalQuantity}`);
 }
 
 //
