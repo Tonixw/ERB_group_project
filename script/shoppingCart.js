@@ -8,18 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 const products = [
-  { id: EFP0006, name: "Champagne Roses", quantity : 0, price: 1280 },
-  { id: EFP0011, name: "Devotion", quantity : 0, price: 1100 },
-  { id: EFP0008, name: "Elegant Twist", quantity: 0, price: 700 },
-  { id: EFP0002, name: "Fairytale Forever", quantity: 0, price: 600 },
-  { id: EFP0012, name: "Fruitful", quantity: 0, price: 700 },
-  { id: EFP0009, name: "I'm with you", quantity: 0, price: 1000 },
-  { id: EFP0001, name: "Jade", quantity: 0, price: 800 },
-  { id: EFP0007, name: "Luna", quantity: 0, price: 1300 },
-  { id: EFP0003, name: "Overload - 18 Roses", quantity: 0, price: 1200 },
-  { id: EFP0004, name: "Pink Moment", quantity: 0, price: 1000 },
-  { id: EFP0010, name: "Warm Respect", quantity: 0, price: 1000 },
-  { id: EFP0005, name: "Summer Happiness", quantity: 0, price: 1200 }
+  { id: "EFP0006", name: "Champagne Roses", quantity : 0, price: 1280 },
+  { id: "EFP0011", name: "Devotion", quantity : 0, price: 1100 },
+  { id: "EFP0008", name: "Elegant Twist", quantity: 0, price: 700 },
+  { id: "EFP0002", name: "Fairytale Forever", quantity: 0, price: 600 },
+  { id: "EFP0012", name: "Fruitful", quantity: 0, price: 700 },
+  { id: "EFP0009", name: "I'm with you", quantity: 0, price: 1000 },
+  { id: "EFP0001", name: "Jade", quantity: 0, price: 800 },
+  { id: "EFP0007", name: "Luna", quantity: 0, price: 1300 },
+  { id: "EFP0003", name: "Overload - 18 Roses", quantity: 0, price: 1200 },
+  { id: "EFP0004", name: "Pink Moment", quantity: 0, price: 1000 },
+  { id: "EFP0010", name: "Warm Respect", quantity: 0, price: 1000 },
+  { id: "EFP0005", name: "Summer Happiness", quantity: 0, price: 1200 }
 ];
 
 // Use a function to get cart to avoid global variable conflicts
@@ -58,7 +58,9 @@ function addToCartFromProductPage(button) {
       return;
    }
 
-   const productId = parseInt(productContainer.querySelector('.product-id').innerText);
+   const productId = document.querySelector('.product-id').innerText;
+
+   console.log(`Product ID: ${productId}`);
 
    const quantityDiv = productContainer.querySelector('.quantity-control');
    if (!quantityDiv) {
