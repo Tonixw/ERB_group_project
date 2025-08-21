@@ -47,11 +47,25 @@
       <a href="index.html"><img src="image/image1.png"></a>
     </div>
     <div class="nav_item">
-      <div id="btn_store">
-        <a href="stores.html">
-          <i class="fa-solid fa-store"></i>
-        </a>
-      </div>
+      <button class="signup-btn" onclick="openModal()">Sign Up</button>
+        <div class="modal" id="signupModal">
+          <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2>Sign Up</h2>
+            <input type="text" id="username" placeholder="Username" />
+            <input type="password" id="password" placeholder="Password" />
+            <input type="email" id="email" placeholder="Email" />
+            <button onclick="submitSignup()">Submit</button>
+          </div>
+        </div>
+
+        <div class="success-message" id="successMessage">Success！</div>
+          <div id="btn_store">
+            <a href="stores.html">
+              <i class="fa-solid fa-store"></i>
+            </a>
+          </div>
+
       <div id="btn_shipping">
         <a href="orderDelivery.html">
           <i class="fa-solid fa-truck"></i>
@@ -116,6 +130,10 @@
           <a onclick="displayProd('optFloSub')">Flower subscription</a>
         </div>
       </div>
+      <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search Item..." />
+      <button onclick="searchItems()">Search</button>
+    </div>
     </div>
   </div>
 
@@ -341,7 +359,8 @@
       }
     };
   </script>
-
+  <script src="/script/product_search.js"></script>
+  <script src="/script/signUp.js"></script>
 </body>
 
 </html>
