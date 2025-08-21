@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_shipping" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=storefront" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <script src="script/shoppingCart.js"></script>
+  <script src="script/miniCart.js"></script>
+
+  <title>Group Project</title>
+
+</head>
+
+<!-- body -->
+
+<body>
+  <div class="header_container">
+    <div class="logo">
+      <a href="index.html"><img src="image/image1.png"></a>
+    </div>
+    <div class="nav_item">
+      <div id="btn_store">
+        <a href="stores.html">
+          <i class="fa-solid fa-store"></i>
+        </a>
+      </div>
+      <div id="btn_shipping">
+        <a href="orderDelivery.html">
+          <i class="fa-solid fa-truck"></i>
+        </a>
+      </div>
+      <div id="btn_shoppingcart" class="cart-container">
+        <a href="shoppingcart.html">
+          <i class="fa-solid fa-cart-shopping">
+          </i>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="mini-cart" id="mini-cart">
+          <div id="mini-cart-items">
+            <!-- Cart items will be populated here -->
+          </div>
+          <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+              <span>Total: $<span id="mini-cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="goToCheckoutPage()">View Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <div class="nav">
+    <div class="nav_item">
+      <div class="dropdown">
+        <button class="dropbtn">By Product</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optBloFloBox')">Blooming & Flower Box</a>
+          <a onclick="displayProd('optBouq')">Bouquet</a>
+          <a onclick="displayProd('optFloStd')">Flower Stand</a>
+          <a onclick="displayProd('optLifeGift')">Lifestyle & Gift Set</a>
+          <a onclick="displayProd('optPreFlo')">Preserved Flower</a>
+          <a onclick="displayProd('optVaseArra')">Vase Arrangement</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">By Occasion</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optAnniv')">Anniversary</a>
+          <a onclick="displayProd('optBirth')">Birthday</a>
+          <a onclick="displayProd('optFest')">Festive</a>
+          <a onclick="displayProd('optGetWell')">Get Well Soon</a>
+          <a onclick="displayProd('optGrad')">Graduation</a>
+          <a onclick="displayProd('optGrandOpen')">Grand Opening</a>
+          <a onclick="displayProd('optPropo')">Proposal</a>
+          <a onclick="displayProd('optRoman')">Romance</a>
+          <a onclick="displayProd('optSamDayDel')">Same Day Delivery</a>
+          <a onclick="displayProd('optSympathy')">Sympathy</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Service</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optCorpFloSol')">Corporate Floral Solution</a>
+          <a onclick="displayProd('optFloSub')">Flower subscription</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="catagory">
+        <div class="index_product optAll optAnniv optBirth optRoman" style="display: none"><a href="product_jade.html">
+            <p>Jade</p>
+            <img width="100%" height="100%" src="./image/birthday/Jade.jpg">
+          </a></div>
+        <div class="index_product optAll optLifeGift optBirth optRoman" style="display: none"><a href="product_fairytale.html">
+            <p>Fairytale Forever</p>
+            <img width="100%" height="100%" src="./image/birthday/Fairytale Forever.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optVaseArra optAnniv optBirth optRoman" style="display: none"><a href="product_overload.html">
+            <p>Overload - 18 Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Overload - 18 Roses.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optAnniv optBirth optGrad optRoman" style="display: none"><a href="product_pink.html">
+            <p>Pink Moment</p>
+            <img width="100%" height="100%" src="./image/birthday/Pink Moment.jpg">
+          </a></div>
+        <div class="index_product optAll optBloFloBox optLifeGift optBirth optGrad" style="display: none"><a href="product_summer.html">
+            <p>Summer Happiness</p>
+            <img width="100%" height="100%" src="./image/birthday/Summer Happiness.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optAnniv optBirth optRoman" style="display: none"><a href="product_champagne.html">
+            <p>Champagne Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Champagne Roses.jpg">
+          </a></div>
+        <div class="index_product optAll optBloFloBox optBirth optGrad" style="display: none"><a href="product_luna.html">
+            <p>Luna</p>
+            <img width="100%" height="100%" src="./image/birthday/Luna.jpg">
+          </a></div>
+        <div class="index_product optAll optCondo" style="display: none"><a href="product_elegant.html">
+            <p>Elegant Twist</p>
+            <img width="100%" height="100%" src="./image/condolence/Elegant Twist.jpg">
+          </a></div>
+        <div class="index_product optAll optVaseArra optCondo" style="display: none"><a href="product_withyou.html">
+            <p>I'm with you</p>
+            <img width="100%" height="100%" src="./image/condolence/I am with you.jpg">
+          </a></div>
+        <div class="index_product optAll optFloStd optCondo" style="display: none"><a href="product_respect.html">
+            <p>Warm Respect</p>
+            <img width="100%" height="100%" src="./image/condolence/Warm Respect.jpg">
+          </a></div>
+        <div class="index_product optAll optFloStd optCondo" style="display: none"><a href="product_devotion.html">
+            <p>Devotion</p>
+            <img width="100%" height="100%" src="./image/condolence/Devotion.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="product_fruitful.html">
+            <p>Fruit Flower Mix</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Fruit Flower Mix.jpg">
+          </a></div>
+        <div class="index_product optAll optFest optGetWell" style="display: none"><a href="#">
+            <p>Vitamin Mania Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Vitamin Mania Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>Small Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Small Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>Medium Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Medium Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>The Big Smile Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/The Big Smile Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll" style="display: none"><a href="#">
+            <p>No product/service searched</p>
+          </a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="catagory">
+        <div class="privacy">
+
+          <article>
+            <h1>Privacy Policy</h1><br>
+
+            <h2>PRIVACY POLICY GENERAL</h2>
+
+            <p>Respecting and protecting our customers’ privacy and personal data is important to Everbloom Florals HK
+              Limited and its parent companies, affiliates, subsidiaries and associated companies (“Group Companies”)
+              (Everbloom Florals HK Limited and Group Companies are collectively referred to as “we” or “us”). This
+              Privacy Policy will help you understand how we collect, use and safeguard your personal data in our
+              interactions with you.</p><br>
+
+            <p>Throughout this Privacy Policy, the term "personal data" means any data relating directly or indirectly
+              to you, from which it is practicable for your identity to be directly or indirectly ascertained, and in a
+              form in which access to or processing of the data is practicable.</p><br>
+
+            <p>By visiting any website owned and operated by us (collectively, our “Site”) or providing us with your
+              personal data via other means (including via our physical stores or telephone enquiries number, or via
+              your application for or use of our services, such as our Privilege Cards or Private Sales), you agree that
+              we will collect, use and store your personal data in accordance with this Privacy Policy, as amended from
+              time to time. This Privacy Policy is incorporated into and forms part of our Terms of Service.</p><br>
+
+            <p>We regularly review this Privacy Policy and may from time to time revise it by updating this page. By
+              continuing to use our services after any amendments to this Privacy Policy, you are agreeing to this
+              Privacy Policy as revised, so please do visit this page periodically for updates.</p><br>
+
+            <h2>COLLECTION OF YOUR PERSONAL DATA</h2>
+
+            <p>We collect, use and store your personal data to ensure we can provide various services to you and offer
+              you a personal experience online and in our stores. This may occur on our Site or via other means. We will
+              keep your personal data confidential at all times and only collect, use and store it in accordance with
+              this Privacy Policy.</p><br>
+
+            <p>Different levels of your personal data may be collected by us, both on our Site and at our physical
+              stores (including our boutiques):</p><br>
+            <ul>
+              <li class="privacy_li">You will need to input certain personal data when registering with us on our Site, in order to receive
+                various features and services that we offer to our registered users, such as email updates, responses to
+                your queries, and to participate in our private sales.</li><br>
+
+              <li class="privacy_li">You can also log into our Site using sign in services that bridge your social media log in information
+                with our Site. These services will authenticate your identity and provide you with the option to share
+                certain personal data with us such as your name and email address, to pre-populate the sign up form for
+                our Site. These services give you the option to post information about your activities on the Site via
+                your profile page to share with others within your personal network. </li><br>
+
+              <li class="privacy_li">You may also use other social media features, widgets and/or interactive mini programs that run on our
+                Site. These features are small content modules that may collect personal data including your IP address,
+                the page you are viewing on our Site or set a cookie to enable the feature to function properly. These
+                social media features are either hosted by us or by a third party on our Site. If a feature is provided
+                by a third party, the use of your personal data will be governed by the privacy policy of that third
+                party. Please review these third party privacy policies.</li><br>
+            </ul>
+
+            <h2>USE OF YOUR PERSONAL DATA</h2>
+
+            <p>We use the personal data you provide to us for the following purposes (and any purposes directly related
+              to these purposes) (collectively, the “Purposes”):</p><br>
+            <ul>
+              <li class="privacy_li">To provide our services to you (including assessing any application for and administration of such
+                services). This includes responding to any questions you may have, providing you with recommendations on
+                products in our stores or on our Site, assessing your applications with us for any of our services,
+                providing our Privilege Card to you, allowing you to participate in our events and promotions when you
+                so wish.</li><br>
+
+              <li class="privacy_li">To provide you with direct marketing communications, in accordance with the “Marketing Communications”
+                section below.</li><br>
+
+              <li class="privacy_li">Matching your personal data with information you provided to us via other means.</li><br>
+
+              <li class="privacy_li">To analyse trends, usage and shopping behaviour with us (whether on an individualized or aggregated
+                basis), which helps us better understand how you and our collective customer base access and use our
+                Site and services, for the purposes of improving our services and to respond to customer desires and
+                preferences. For these purposes, we will use personal data about your gender, age, interests,
+                geographical location, Site usage, shopping behaviour and other personal data.</li><br>
+            </ul>
+
+            <h2>OTHER POINTS OF NOTE REGARDING YOUR PERSONAL DATA</h2>
+
+            <p>Please also note that:</p><br>
+
+            <p>Your personal data held by us will be kept confidential, except we may disclose your personal data to the
+              following parties (who may be located, and use your personal data, outside of your country of residence):
+              (a) our related companies (including our affiliate and subsidiary companies), (b) person or company
+              (including third party agent or sub-contractor) who is acting for, on behalf of or jointly with us; or (c)
+              our service providers who may be engaged to perform a variety of functions, such as, fulfilling orders,
+              assisting with promotions and market surveys, providing technical services for the Site and applications
+              software, etc. These service providers may have to be provided with access to personal information
+              collected by us to perform such functions, but they may only use such personal information for the purpose
+              of performing that function and may not use it for any other purpose.</p><br>
+            <ul>
+              <li class="privacy_li">We may also disclose and transfer (whether in your country of residence or abroad) to any of our
+                actual or proposed assignees or transferees of our rights with respect to your personal data in
+                connection with a re-structuring of our business, and/or merger (as between us and a third party), sale,
+                or transfer (whether of assets or shares, in whole or in part), to use, hold, process or retain such
+                personal data for the Purposes.</li><br>
+
+              <li class="privacy_li">We reserve the right to use or disclose any information as needed to satisfy any law, regulation or
+                legal request, to protect the integrity of the Site, to fulfill your requests, or to cooperate in any
+                law enforcement investigation or an investigation on a matter of public safety.</li><br>
+
+              <li class="privacy_li">We may transfer, use and store your personal data in countries or jurisdictions outside of your
+                country of residence for the Purposes and in accordance with this Privacy Policy. The laws governing
+                data protection in these countries or jurisdictions may differ from the laws in your country of
+                residence. By your voluntary submission of personal information to us, you are consenting to the
+                disclosure, transfer and use of your personal information outside of your country of residence for the
+                purposes described in this Privacy Policy.</li><br>
+
+              <li class="privacy_li">If you do not provide your personal data to us, we may not be able to provide all of our services and
+                features to you.</li><br>
+
+              <li class="privacy_li">Subject to, or where otherwise required by law or permitted by law to protect our interests, we will
+                (a) only retain your personal data for as long as it is necessary to fulfill the Purposes, and (b) erase
+                any of your personal data that we have stored as soon as reasonably practicable, if you choose to delete
+                your account with us (c) use our reasonable efforts to procure to erase any data held by a third party
+                if you choose to delete your account with us or terminate use of social media features.</li><br>
+
+              <li class="privacy_li">You may from time to time provide us with various third parties’ personal data (for instance, in
+                relation to their receipt of benefits or Merchandise from us). You agree that you have procured the
+                relevant third party’s consent to provide us with their personal data (to be collected, used and stored
+                in accordance with this Privacy Policy) prior to such provision by you.</li><br>
+            </ul>
+
+            <h2>COLLECTION OF ANONYMOUS DATA FROM YOU</h2>
+
+            <p>Separately, we may collect certain other data from you on our Site:</p><br>
+
+            <ul>
+              <li class="privacy_li">We automatically collect data relating to your online session to provide our services to you, to
+                gather statistical information on our server’s usage and to help us better meet your demands and
+                expectations. This may include but is not limited to your browser type and version, your operating
+                system and your IP address and/or domain name.</li><br>
+
+              <li class="privacy_li">If you are browsing our Site, it may place a cookie on your computer that identifies your computer to
+                us and allows us to personalise your shopping experience and provide you with various services (such as
+                maintaining the content of your shopping cart). Cookies are small information files stored on your hard
+                drive and are automatically accepted by most browsers. It does not allow us to access the rest of your
+                computer or your personal data. Please change your browser’s settings if you do not wish to accept
+                cookies. Please note that you may not be able to use all features and services offered on our Site if
+                your browser does not accept cookies.</li><br>
+            </ul>
+
+            <h2>MARKETING COMMUNICATIONS</h2>
+
+            <p>We may use the personal data you provide to us to offer direct marketing communications to you from time
+              to time, in accordance with the below provisions and the remainder of this Privacy Policy:</p><br>
+
+            <ul>
+              <li class="privacy_li">Your name, phone number, email address and other contact details, products and services portfolio
+                information, transaction pattern and behavior, financial background and demographic data held by us may
+                be used by us in direct marketing.</li><br>
+
+              <li class="privacy_li">Everbloom Florals HK Limited may provide your personal data as described above to Group Companies
+                (including without limitation CMC Everbloom Florals) for use by them for direct marketing purposes. The
+                provision of such personal data by Everbloom Florals HK Limited is not for gain.</li><br>
+
+              <li class="privacy_li">We may market to you our goods and services, and the goods and services of: (a) any Group Companies ,
+                (b) joint venture partners, and (c) other third party providers. Such marketing communications from us
+                may be in various forms, including advertisements, special events notifications or newsletters, and
+                delivered via various methods in accordance with the personal data that you provide to us, such as by
+                email, SMS, smartphone app push notifications, notifications on your social media pages, in-app
+                messaging or postal mail.</li><br>
+
+              <li class="privacy_li">Such marketing communications from us may market or offer products or services (including special
+                events and promotions) in the following categories: Dining, food and beverages, sports, music, film,
+                television and other entertainment, clothing and accessories, jewellery, luggage and bags, cosmetics,
+                personal health and hygiene, electronics, home furnishings, and housewares, automobiles, transport and
+                travel, hotels, financial services, loyalty and reward programs, media services, entertainment services,
+                social networking services, payment services, on-line advertising services, other e-commerce,
+                information and communications and services, concierge services, and other products and services that we
+                think may be relevant to you based on information you provide to us (for instance, via your
+                participation in our surveys).</li><br>
+
+              <li class="privacy_li">By your submission of your personal information for any of the Purposes, it indicates that you have read
+                and understood this Privacy Policy and you are consenting to our collection and use of your personal
+                information in accordance with this Privacy Policy. However, we may not use your personal data in direct
+                marketing unless we have received your express consent. Everbloom Florals HK Limited may not provide
+                your personal data to Group Companies for use by them for direct marketing purposes unless with your
+                written consent.</li><br>
+
+              <li class="privacy_li">If you would like to receive news updates on our products, services and promotional events or other
+                marketing materials or information about us, please indicate your consent by checking the tick box on
+                the form you use to submit your personal information to us. If after providing us with your consent you
+                decide you no longer want us to use your personal information in direct marketing, please let us know by
+                contacting us at the email address listed at the end of this policy and we will desist.</li><br>
+            </ul>
+            <h2>PROTECTING YOUR PERSONAL DATA</h2>
+
+            <p>We maintain appropriate technical and organizational measures to protect the personal data you provide to
+              us against accidental or unlawful destruction, loss, alteration, authorized disclosure of, or access to
+              your personal data.</p><br>
+
+            <p>Our Site may contain hyperlinks to other websites provided by third parties. We do not control these
+              third party websites or any of the content contained on those websites. Once you have left our Site, we
+              cannot be responsible for the protection and privacy of any information which you provide. You should
+              exercise caution and look at the privacy statement for the website(s) you visit.</p><br>
+
+            <h2>ACCESS</h2>
+            <p>You are in control of all personal information you provide to us. If at any time, you would like to
+              review, correct or change the personal information we have on you, or to change your preferences for
+              contacts from us, you may let us know by contacting us at the email address listed at the end of this
+              Privacy Policy.</p><br>
+
+            <h2>LANGUAGES</h2>
+            <p>The English version of this policy shall prevail in case of any discrepancies between the English and
+              Chinese versions.</p><br>
+
+            <h2>HOW TO CONTACT US</h2>
+
+            <p>If you have any questions regarding our Privacy Policy, please contact us by email to
+              cafefleuriste@everbloomflorals.com.hk.</p>
+
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="catagory">
+      <div class="footer">
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
+      </div>
+      <div class="footer">
+        <label for="kit_email"><b>Keep in touch</b></label>
+        <br>
+        <div class="keepintouch">
+          <form id="kit_email">
+            <input type="email" name="kit_email" id="kit_email" placeholder="Enter your email">
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
+          </form>
+          <br>
+          <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+          </a>
+        </div>
+      </div>
+      <div class="footer">
+        <span><b>Online Purchase</b></span>
+        <ul>
+          <li><a href="">Promotion</a></li>
+          <li><a href="orderDelivery.html">Order & Delivery</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <span><b>About Company</b></span>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="corporateOrder.html">Corporate Order</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="termsNConditions.html">Terms & Condition</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    function thankyou() {
+      window.open("greeting1.html"); // Replace with your desired URL
+    };
+
+    function displayProd(name) {
+      let opt = document.getElementsByClassName("optAll");
+      var prodSearched = false;
+      var j;
+      for (j = 0; j < opt.length; j++) {
+        if (opt[j].classList.contains(name)) {
+          prodSearched = true;
+          if (opt[j].style.display === "block") {
+            continue;
+          } else {
+            opt[j].style.display = "block";
+          }
+        } else {
+          opt[j].style.display = "none";
+        }
+      }
+      j = j - 1;
+      if (prodSearched) {
+        opt[j].style.display = "none";
+      } else {
+        opt[j].style.display = "block";
+      }
+    };
+  </script>
+</body>
+
+</html>

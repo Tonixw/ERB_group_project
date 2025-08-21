@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_shipping" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=storefront" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <script src="script/shoppingCart.js"></script>
+  <script src="script/miniCart.js"></script>
+  <script src="script/checkout.js"></script>
+
+  <title>Group Project</title>
+
+</head>
+
+<!-- body -->
+
+<body>
+  <div class="header_container">
+    <div class="logo">
+      <a href="index.html"><img src="image/image1.png"></a>
+    </div>
+    <div class="nav_item">
+      <div id="btn_store">
+        <a href="stores.html">
+          <i class="fa-solid fa-store"></i>
+        </a>
+      </div>
+      <div id="btn_shipping">
+        <a href="orderDelivery.html">
+          <i class="fa-solid fa-truck"></i>
+        </a>
+      </div>
+      <div id="btn_shoppingcart" class="cart-container">
+        <a href="shoppingcart.html">
+          <i class="fa-solid fa-cart-shopping">
+          </i>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="mini-cart" id="mini-cart">
+          <div id="mini-cart-items">
+            <!-- Cart items will be populated here -->
+          </div>
+          <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+              <span>Total: $<span id="mini-cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="goToCheckoutPage()">View Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <div class="nav">
+    <div class="nav_item">
+      <div class="dropdown">
+        <button class="dropbtn">By Product</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optBloFloBox')">Blooming & Flower Box</a>
+          <a onclick="displayProd('optBouq')">Bouquet</a>
+          <a onclick="displayProd('optFloStd')">Flower Stand</a>
+          <a onclick="displayProd('optLifeGift')">Lifestyle & Gift Set</a>
+          <a onclick="displayProd('optPreFlo')">Preserved Flower</a>
+          <a onclick="displayProd('optVaseArra')">Vase Arrangement</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">By Occasion</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optAnniv')">Anniversary</a>
+          <a onclick="displayProd('optBirth')">Birthday</a>
+          <a onclick="displayProd('optFest')">Festive</a>
+          <a onclick="displayProd('optGetWell')">Get Well Soon</a>
+          <a onclick="displayProd('optGrad')">Graduation</a>
+          <a onclick="displayProd('optGrandOpen')">Grand Opening</a>
+          <a onclick="displayProd('optPropo')">Proposal</a>
+          <a onclick="displayProd('optRoman')">Romance</a>
+          <a onclick="displayProd('optSamDayDel')">Same Day Delivery</a>
+          <a onclick="displayProd('optSympathy')">Sympathy</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Service</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optCorpFloSol')">Corporate Floral Solution</a>
+          <a onclick="displayProd('optFloSub')">Flower subscription</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="catagory">
+        <div class="index_product optAll optAnniv optBirth optRoman" style="display: none"><a href="product_jade.html">
+            <p>Jade</p>
+            <img width="100%" height="100%" src="./image/birthday/Jade.jpg">
+          </a></div>
+        <div class="index_product optAll optLifeGift optBirth optRoman" style="display: none"><a href="product_fairytale.html">
+            <p>Fairytale Forever</p>
+            <img width="100%" height="100%" src="./image/birthday/Fairytale Forever.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optVaseArra optAnniv optBirth optRoman" style="display: none"><a href="product_overload.html">
+            <p>Overload - 18 Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Overload - 18 Roses.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optAnniv optBirth optGrad optRoman" style="display: none"><a href="product_pink.html">
+            <p>Pink Moment</p>
+            <img width="100%" height="100%" src="./image/birthday/Pink Moment.jpg">
+          </a></div>
+        <div class="index_product optAll optBloFloBox optLifeGift optBirth optGrad" style="display: none"><a href="product_summer.html">
+            <p>Summer Happiness</p>
+            <img width="100%" height="100%" src="./image/birthday/Summer Happiness.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optAnniv optBirth optRoman" style="display: none"><a href="product_champagne.html">
+            <p>Champagne Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Champagne Roses.jpg">
+          </a></div>
+        <div class="index_product optAll optBloFloBox optBirth optGrad" style="display: none"><a href="product_luna.html">
+            <p>Luna</p>
+            <img width="100%" height="100%" src="./image/birthday/Luna.jpg">
+          </a></div>
+        <div class="index_product optAll optCondo" style="display: none"><a href="product_elegant.html">
+            <p>Elegant Twist</p>
+            <img width="100%" height="100%" src="./image/condolence/Elegant Twist.jpg">
+          </a></div>
+        <div class="index_product optAll optVaseArra optCondo" style="display: none"><a href="product_withyou.html">
+            <p>I'm with you</p>
+            <img width="100%" height="100%" src="./image/condolence/I am with you.jpg">
+          </a></div>
+        <div class="index_product optAll optFloStd optCondo" style="display: none"><a href="product_respect.html">
+            <p>Warm Respect</p>
+            <img width="100%" height="100%" src="./image/condolence/Warm Respect.jpg">
+          </a></div>
+        <div class="index_product optAll optFloStd optCondo" style="display: none"><a href="product_devotion.html">
+            <p>Devotion</p>
+            <img width="100%" height="100%" src="./image/condolence/Devotion.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="product_fruitful.html">
+            <p>Fruit Flower Mix</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Fruit Flower Mix.jpg">
+          </a></div>
+        <div class="index_product optAll optFest optGetWell" style="display: none"><a href="#">
+            <p>Vitamin Mania Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Vitamin Mania Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>Small Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Small Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>Medium Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Medium Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>The Big Smile Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/The Big Smile Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll" style="display: none"><a href="#">
+            <p>No product/service searched</p>
+          </a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="checkout">
+    <div class="cart_section">
+      <div class="checkout-total"></div>
+      <div class="cart_info">
+        <h3>Contact</h3>
+        <input class="delivery_info" type="text" placeholder="Email" required>
+        <br>
+        <br>
+        <input id="news_offers" type="checkbox" checked>
+        <label for="news_offers"> 
+          Email me with news and offers</label>
+      </div>
+      <div class="cart_info">
+        <h3>Delivery</h3>
+        <input class="delivery_info" type="text" placeholder="First name" required>
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Last name (Optional)">
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Company">
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Full address" required>
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="District" required>
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Region" required>
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Phone" required>
+        <br>
+        <br>
+        <input id="save_info" type="checkbox" checked><label for="save_info"> Save this information for next
+          time.</label>
+      </div>
+      <div class="cart_info">
+        <h3>Sender information</h3>
+        <input class="delivery_info" type="text" placeholder="Salutation" required>
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Name" required>
+        <br>
+        <br>
+        <input class="delivery_info" type="text" placeholder="Phone Number" required>
+        <p>*We may contact you at this number for order updates and confirmation.</p>
+      </div>
+      <div class="cart_info">
+        <h3>Receipient Information</h3>
+        <input class="delivery_info" type="text" placeholder="Salutation" required>
+        <br>
+        <br>
+      </div>
+
+      <div class="cart_info">
+        <p>Payment</p>
+        <p>All transactions are secure and encrypted.</p>
+      </div>
+      <div class="cart_info">
+        <input type="radio" id="octopus" name="payment_method" value="Octopus">
+        <label for="octopus">Octopus <img src=image/octopus2.png></label>
+        <br>
+        <input type="radio" id="creditcard" name="payment_method" value="creditcard">
+        <label for="creditcard">Credit Card <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+            viewBox="0 0 32 32">
+            <g class="nc-icon-wrapper">
+              <rect x="2" y="7" width="28" height="18" rx="3" ry="3" fill="#fff" stroke-width="0"></rect>
+              <path
+                d="m27,7H5c-1.657,0-3,1.343-3,3v12c0,1.657,1.343,3,3,3h22c1.657,0,3-1.343,3-3v-12c0-1.657-1.343-3-3-3Zm2,15c0,1.103-.897,2-2,2H5c-1.103,0-2-.897-2-2v-12c0-1.103.897-2,2-2h22c1.103,0,2,.897,2,2v12Z"
+                stroke-width="0" opacity=".15"></path>
+              <path d="m27,8H5c-1.105,0-2,.895-2,2v1c0-1.105.895-2,2-2h22c1.105,0,2,.895,2,2v-1c0-1.105-.895-2-2-2Z"
+                fill="#fff" opacity=".2" stroke-width="0"></path>
+              <path
+                d="m13.392,12.624l-2.838,6.77h-1.851l-1.397-5.403c-.085-.332-.158-.454-.416-.595-.421-.229-1.117-.443-1.728-.576l.041-.196h2.98c.38,0,.721.253.808.69l.738,3.918,1.822-4.608h1.84Z"
+                fill="#1434cb" stroke-width="0"></path>
+              <path
+                d="m20.646,17.183c.008-1.787-2.47-1.886-2.453-2.684.005-.243.237-.501.743-.567.251-.032.943-.058,1.727.303l.307-1.436c-.421-.152-.964-.299-1.638-.299-1.732,0-2.95.92-2.959,2.238-.011.975.87,1.518,1.533,1.843.683.332.912.545.909.841-.005.454-.545.655-1.047.663-.881.014-1.392-.238-1.799-.428l-.318,1.484c.41.188,1.165.351,1.947.359,1.841,0,3.044-.909,3.05-2.317"
+                fill="#1434cb" stroke-width="0"></path>
+              <path
+                d="m25.423,12.624h-1.494c-.337,0-.62.195-.746.496l-2.628,6.274h1.839l.365-1.011h2.247l.212,1.011h1.62l-1.415-6.77Zm-2.16,4.372l.922-2.542.53,2.542h-1.452Z"
+                fill="#1434cb" stroke-width="0"></path>
+              <path fill="#1434cb" stroke-width="0"
+                d="M15.894 12.624L14.446 19.394 12.695 19.394 14.143 12.624 15.894 12.624z"></path>
+            </g>
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+            <g class="nc-icon-wrapper">
+              <rect x="2" y="7" width="28" height="18" rx="3" ry="3" fill="#141413" stroke-width="0"></rect>
+              <path
+                d="m27,7H5c-1.657,0-3,1.343-3,3v12c0,1.657,1.343,3,3,3h22c1.657,0,3-1.343,3-3v-12c0-1.657-1.343-3-3-3Zm2,15c0,1.103-.897,2-2,2H5c-1.103,0-2-.897-2-2v-12c0-1.103.897-2,2-2h22c1.103,0,2,.897,2,2v12Z"
+                stroke-width="0" opacity=".15"></path>
+              <path d="m27,8H5c-1.105,0-2,.895-2,2v1c0-1.105.895-2,2-2h22c1.105,0,2,.895,2,2v-1c0-1.105-.895-2-2-2Z"
+                fill="#fff" opacity=".2" stroke-width="0"></path>
+              <path fill="#ff5f00" stroke-width="0" d="M13.597 11.677H18.407V20.32H13.597z"></path>
+              <path
+                d="m13.902,15.999c0-1.68.779-3.283,2.092-4.322-2.382-1.878-5.849-1.466-7.727.932-1.863,2.382-1.451,5.833.947,7.712,2,1.573,4.795,1.573,6.795,0-1.329-1.038-2.107-2.642-2.107-4.322Z"
+                fill="#eb001b" stroke-width="0"></path>
+              <path
+                d="m24.897,15.999c0,3.039-2.459,5.497-5.497,5.497-1.237,0-2.428-.412-3.39-1.176,2.382-1.878,2.795-5.329.916-7.727-.275-.336-.58-.657-.916-.916,2.382-1.878,5.849-1.466,7.712.932.764.962,1.176,2.153,1.176,3.39Z"
+                fill="#f79e1b" stroke-width="0"></path>
+            </g>
+          </svg>
+        </label>
+      </div>
+      <div class="cart_info">
+        <br>
+        <span>Subscription Payment</span>
+        <br>
+        <br>
+        <input class="creditcard" type="text" placeholder="Card number" required><br><br>
+        <input class="creditcard" type="text" placeholder="Expiration date (MM / YY)" required><br><br>
+        <input class="creditcard" type="text" placeholder="Security code" required><br><br>
+        <input class="creditcard" type="text" placeholder="Name on card" required><br><br>
+      </div>
+      <div class="cart_info">
+        <h4>Order summary</h4>
+        <input class="summary" type="text" placeholder="Discount code"><br><br>
+        <div id="pay">Pay now</div>
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="catagory">
+      <div class="footer">
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
+      </div>
+      <div class="footer">
+        <label for="kit_email"><b>Keep in touch</b></label>
+        <br>
+        <div class="keepintouch">
+          <form id="kit_email">
+            <input type="email" name="kit_email" id="kit_email" placeholder="Enter your email">
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
+          </form>
+          <br>
+          <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+          </a>
+        </div>
+      </div>
+      <div class="footer">
+        <span><b>Online Purchase</b></span>
+        <ul>
+          <li><a href="">Promotion</a></li>
+          <li><a href="orderDelivery.html">Order & Delivery</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <span><b>About Company</b></span>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="corporateOrder.html">Corporate Order</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="termsNConditions.html">Terms & Condition</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    function thankyou() {
+      window.open("greeting1.html"); // Replace with your desired URL
+    };
+
+    function displayProd(name) {
+      let opt = document.getElementsByClassName("optAll");
+      var prodSearched = false;
+      var j;
+      for (j = 0; j < opt.length; j++) {
+        if (opt[j].classList.contains(name)) {
+          prodSearched = true;
+          if (opt[j].style.display === "block") {
+            continue;
+          } else {
+            opt[j].style.display = "block";
+          }
+        } else {
+          opt[j].style.display = "none";
+        }
+      }
+      j = j - 1;
+      if (prodSearched) {
+        opt[j].style.display = "none";
+      } else {
+        opt[j].style.display = "block";
+      }
+    };
+  </script>
+</body>
+
+</html>

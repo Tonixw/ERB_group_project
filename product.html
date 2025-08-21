@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_shipping" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=storefront" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <script src="script/shoppingCart.js"></script>
+  <script src="script/miniCart.js"></script>
+
+  <title>Group Project</title>
+
+</head>
+
+<!-- body -->
+
+<body>
+  <div class="header_container">
+    <div class="logo">
+      <a href="index.html"><img src="image/image1.png"></a>
+    </div>
+    <div class="nav_item">
+      <div id="btn_store">
+        <a href="stores.html">
+          <i class="fa-solid fa-store"></i>
+        </a>
+      </div>
+      <div id="btn_shipping">
+        <a href="orderDelivery.html">
+          <i class="fa-solid fa-truck"></i>
+        </a>
+      </div>
+      <div id="btn_shoppingcart" class="cart-container">
+        <a href="shoppingcart.html">
+          <i class="fa-solid fa-cart-shopping">
+          </i>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="mini-cart" id="mini-cart">
+          <div id="mini-cart-items">
+            <!-- Cart items will be populated here -->
+          </div>
+          <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+              <span>Total: $<span id="mini-cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="goToCheckoutPage()">View Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <div class="nav">
+    <div class="nav_item">
+      <div class="dropdown">
+        <button class="dropbtn">By Product</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optBloFloBox')">Blooming & Flower Box</a>
+          <a onclick="displayProd('optBouq')">Bouquet</a>
+          <a onclick="displayProd('optFloStd')">Flower Stand</a>
+          <a onclick="displayProd('optLifeGift')">Lifestyle & Gift Set</a>
+          <a onclick="displayProd('optPreFlo')">Preserved Flower</a>
+          <a onclick="displayProd('optVaseArra')">Vase Arrangement</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">By Occasion</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optAnniv')">Anniversary</a>
+          <a onclick="displayProd('optBirth')">Birthday</a>
+          <a onclick="displayProd('optFest')">Festive</a>
+          <a onclick="displayProd('optGetWell')">Get Well Soon</a>
+          <a onclick="displayProd('optGrad')">Graduation</a>
+          <a onclick="displayProd('optGrandOpen')">Grand Opening</a>
+          <a onclick="displayProd('optPropo')">Proposal</a>
+          <a onclick="displayProd('optRoman')">Romance</a>
+          <a onclick="displayProd('optSamDayDel')">Same Day Delivery</a>
+          <a onclick="displayProd('optSympathy')">Sympathy</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Service</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optCorpFloSol')">Corporate Floral Solution</a>
+          <a onclick="displayProd('optFloSub')">Flower subscription</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="container_product">
+      <div class="container_left">
+        <div class="intro_photo">
+          <h3>Product</h3>
+        </div>
+        <div id="product_photo">
+          <img src="">To be inserted image
+        </div>
+      </div>
+      <div class="container_right">
+        <div class="intro_product">
+          <p>Product Name:</p>
+        </div>
+        <div class="intro_product">
+          Product ID:
+          <span class="product-id">1</span>
+        </div>
+        <div class="intro_product">
+          <p>Product description: (sample)</p>
+          <p>We are delighted to announce a special collaboration with a local candle shop “Angel Candle”, founded in
+            1971. Our thoughtfully curated candle collection features two delightful scents—Peony and Roses.The
+            combination of fresh blooms and exquisite candles makes this collection the perfect choice for celebrating
+            this special occasions. Treat your beloved in your life to this thoughtful and eco-friendly gift that
+            reflects love and care for both people and the planet.</p>
+          <p>Thank you for supporting our commitment to sustainability and local artisans.</p>
+        </div>
+        <div class="intro_product">
+          <p>Product details: (sample)</p>
+          <ul>
+            <li>Bamboo Wood box : 24cm x 24cm x 10cm 。</li>
+            <li>Wood Wick Candle in b. glass (295g-305g) : 8cm W x 9cm H</li>
+            <li>Candle : Peony</li>
+            <li>Ingredients : Soy Wax: 79%/ Bees Wax: 3%-5%/ Paraffin Wax: 8%-10%</li>
+          </ul>
+        </div>
+        <div class="intro_product">
+          <p>Disclaimer: (sample)</p>
+          <ul>
+            <li>Photos are for reference only. Shade of color may vary due to seasonality. All flowers are subject to
+              availability. In the event that a particular flower is unavailable, our florists will select a suitable
+              substitution based on color, shape and value, assured the bouquet will still have the same style and
+              variety
+              and value.</li>
+            <li>Place your order before 6pm for delivery in 3-7 days.</li>
+          </ul>
+        </div>
+        <div class="intro_product">
+          <p>Price:</p>
+        </div>
+
+        <div class="intro_product">
+          <span>Do you need a handwritten message card?*</span><br>
+          <form>
+            <input type="radio" id="wcard" name="msgcard">
+            <label for="wcard">Yes</label>
+            <input type="radio" id="wocard" name="msgcard" checked>
+            <label for="wocard">No
+            </label>
+          </form>
+          <br>
+          <br>
+          <span>Message</span><br>
+          <textarea rows="3" cols="" placeholder="Leave your message here."></textarea><br><br>
+          <div class="quantity-control">
+            Quantity:
+            <button onclick="decreaseQuantity(this)">-</button>
+            <span class="quantity">0</span>
+            <button onclick="increaseQuantity(this)">+</button>
+          </div>
+          <button onclick="addToCartFromProductPage(this)">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="catagory">
+      <div class="footer">
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
+      </div>
+      <div class="footer">
+        <label for="kit_email"><b>Keep in touch</b></label>
+        <br>
+        <div class="keepintouch">
+          <form id="kit_email">
+            <input type="email" name="kit_email" id="kit_email" placeholder="Enter your email">
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
+          </form>
+          <br>
+          <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+          </a>
+        </div>
+      </div>
+      <div class="footer">
+        <span><b>Online Purchase</b></span>
+        <ul>
+          <li><a href="">Promotion</a></li>
+          <li><a href="orderDelivery.html">Order & Delivery</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <span><b>About Company</b></span>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="corporateOrder.html">Corporate Order</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="termsNConditions.html">Terms & Condition</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    function thankyou() {
+      window.open("greeting1.html"); // Replace with your desired URL
+    };
+
+    function displayProd(name) {
+      let opt = document.getElementsByClassName("optAll");
+      var prodSearched = false;
+      var j;
+      for (j = 0; j < opt.length; j++) {
+        if (opt[j].classList.contains(name)) {
+          prodSearched = true;
+          if (opt[j].style.display === "block") {
+            continue;
+          } else {
+            opt[j].style.display = "block";
+          }
+        } else {
+          opt[j].style.display = "none";
+        }
+      }
+      j = j - 1;
+      if (prodSearched) {
+        opt[j].style.display = "none";
+      } else {
+        opt[j].style.display = "block";
+      }
+    };
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=remove_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=person" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_shopping_cart" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=local_shipping" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=storefront" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=location_on" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/header.css">
+  <script src="script/shoppingCart.js"></script>
+  <script src="script/miniCart.js"></script>
+
+  <title>Group Project</title>
+
+</head>
+
+<!-- body -->
+
+<body>
+  <div class="header_container">
+    <div class="logo">
+      <a href="index.html"><img src="image/image1.png"></a>
+    </div>
+    <div class="nav_item">
+      <div id="btn_store">
+        <a href="stores.html">
+          <i class="fa-solid fa-store"></i>
+        </a>
+      </div>
+      <div id="btn_shipping">
+        <a href="orderDelivery.html">
+          <i class="fa-solid fa-truck"></i>
+        </a>
+      </div>
+      <div id="btn_shoppingcart" class="cart-container">
+        <a href="shoppingcart.html">
+          <i class="fa-solid fa-cart-shopping">
+          </i>
+          <span class="cart-count">0</span>
+        </a>
+        <div class="mini-cart" id="mini-cart">
+          <div id="mini-cart-items">
+            <!-- Cart items will be populated here -->
+          </div>
+          <div class="mini-cart-footer">
+            <div class="mini-cart-total">
+              <span>Total: $<span id="mini-cart-total">0.00</span></span>
+            </div>
+            <button class="checkout-btn" onclick="goToCheckoutPage()">View Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <div class="nav">
+    <div class="nav_item">
+      <div class="dropdown">
+        <button class="dropbtn">By Product</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optBloFloBox')">Blooming & Flower Box</a>
+          <a onclick="displayProd('optBouq')">Bouquet</a>
+          <a onclick="displayProd('optFloStd')">Flower Stand</a>
+          <a onclick="displayProd('optLifeGift')">Lifestyle & Gift Set</a>
+          <a onclick="displayProd('optPreFlo')">Preserved Flower</a>
+          <a onclick="displayProd('optVaseArra')">Vase Arrangement</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">By Occasion</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optAll')">ALL</a>
+          <a onclick="displayProd('optAnniv')">Anniversary</a>
+          <a onclick="displayProd('optBirth')">Birthday</a>
+          <a onclick="displayProd('optFest')">Festive</a>
+          <a onclick="displayProd('optGetWell')">Get Well Soon</a>
+          <a onclick="displayProd('optGrad')">Graduation</a>
+          <a onclick="displayProd('optGrandOpen')">Grand Opening</a>
+          <a onclick="displayProd('optPropo')">Proposal</a>
+          <a onclick="displayProd('optRoman')">Romance</a>
+          <a onclick="displayProd('optSamDayDel')">Same Day Delivery</a>
+          <a onclick="displayProd('optSympathy')">Sympathy</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Service</button>
+        <div class="dropdown-content">
+          <a onclick="displayProd('optCorpFloSol')">Corporate Floral Solution</a>
+          <a onclick="displayProd('optFloSub')">Flower subscription</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="container">
+      <div class="catagory">
+        <div class="index_product optAll optAnniv optBirth optRoman" style="display: none"><a href="product_jade.html">
+            <p>Jade</p>
+            <img width="100%" height="100%" src="./image/birthday/Jade.jpg">
+          </a></div>
+        <div class="index_product optAll optLifeGift optBirth optRoman" style="display: none"><a href="product_fairytale.html">
+            <p>Fairytale Forever</p>
+            <img width="100%" height="100%" src="./image/birthday/Fairytale Forever.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optVaseArra optAnniv optBirth optRoman" style="display: none"><a href="product_overload.html">
+            <p>Overload - 18 Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Overload - 18 Roses.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optAnniv optBirth optGrad optRoman" style="display: none"><a href="product_pink.html">
+            <p>Pink Moment</p>
+            <img width="100%" height="100%" src="./image/birthday/Pink Moment.jpg">
+          </a></div>
+        <div class="index_product optAll optBloFloBox optLifeGift optBirth optGrad" style="display: none"><a href="product_summer.html">
+            <p>Summer Happiness</p>
+            <img width="100%" height="100%" src="./image/birthday/Summer Happiness.jpg">
+          </a></div>
+        <div class="index_product optAll optBouq optAnniv optBirth optRoman" style="display: none"><a href="product_champagne.html">
+            <p>Champagne Roses</p>
+            <img width="100%" height="100%" src="./image/birthday/Champagne Roses.jpg">
+          </a></div>
+        <div class="index_product optAll optBloFloBox optBirth optGrad" style="display: none"><a href="product_luna.html">
+            <p>Luna</p>
+            <img width="100%" height="100%" src="./image/birthday/Luna.jpg">
+          </a></div>
+        <div class="index_product optAll optCondo" style="display: none"><a href="product_elegant.html">
+            <p>Elegant Twist</p>
+            <img width="100%" height="100%" src="./image/condolence/Elegant Twist.jpg">
+          </a></div>
+        <div class="index_product optAll optVaseArra optCondo" style="display: none"><a href="product_withyou.html">
+            <p>I'm with you</p>
+            <img width="100%" height="100%" src="./image/condolence/I am with you.jpg">
+          </a></div>
+        <div class="index_product optAll optFloStd optCondo" style="display: none"><a href="product_respect.html">
+            <p>Warm Respect</p>
+            <img width="100%" height="100%" src="./image/condolence/Warm Respect.jpg">
+          </a></div>
+        <div class="index_product optAll optFloStd optCondo" style="display: none"><a href="product_devotion.html">
+            <p>Devotion</p>
+            <img width="100%" height="100%" src="./image/condolence/Devotion.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="product_fruitful.html">
+            <p>Fruit Flower Mix</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Fruit Flower Mix.jpg">
+          </a></div>
+        <div class="index_product optAll optFest optGetWell" style="display: none"><a href="#">
+            <p>Vitamin Mania Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Vitamin Mania Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>Small Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Small Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>Medium Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/Medium Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll optFest" style="display: none"><a href="#">
+            <p>The Big Smile Fruit Basket</p>
+            <img width="100%" height="100%" src="./image/Fruit Basket/The Big Smile Fruit Basket.jpg">
+          </a></div>
+        <div class="index_product optAll" style="display: none"><a href="#">
+            <p>No product/service searched</p>
+          </a></div>
+      </div>
+    </div>
+  </div>
+
+<!-- Corporate Order -->
+  <div class="container">
+    <div class="orderDelivery">
+      <p id="od_title">Delivery / Pick Up</p>
+      <p class="od_para">Flower orders are offered delivery services at certain charges (based on specified location).</p>
+      <br>
+      <br>
+      <p id="od_topic">1. Pick Up</p>
+      <p><b>For the online orders of flower</b></p>
+
+      <p>&nbsp;&nbsp;The preparation and cut off time varies for the flower items. Please refer to the product page.</p>
+      <br>
+      <button type="button" class="collapsible">Remarks</button>
+      <div class="remarks">
+        <ul>
+          <li>You can choose the pick-up location and time upon checkout.</li><br>
+          <li>Please be reminded that the pick up location CANNOT be changed after confirmation.</li><br>
+        </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+
+
+      <p id="od_topic">2. Delivery</p>
+      <Delivery service is available upon spending HK$900 net or above per transaction. Delivery charge varies to the delivery location.</p>
+      <br>
+      <button type="button" class="collapsible">Remarks</button>
+      <div class="remarks">
+        <ul>
+          <li>You can choose the delivery time upon checkout.</li><br>
+          <li>Please be reminded that the shipping address CANNOT be changed after confirmation.</li><br>
+          <li>Typhoon 8 and above & Black Rainstorm Signal: The flowers will be delivered on the next available day.</li><br>
+        </ul>
+      </div>
+      <br>
+      <br>
+      <br>
+
+      <p id="od_topic">3. Delivery fee</p>
+      <ul>
+      <li>Hong Kong : $180</li>
+      <li>Kowloon : $180</li>
+      <li>New Territories : $180</li>
+      <p>&nbsp;(Specific Islands and Remote Area excluded)</p>
+      <li>Specific Islands and Remote Area : $350</li>
+      <p>&nbsp;Specific Islands - Tung Chung, Airport, Discovery Bay, Disneyland, Ma Wan</p>
+      <p>&nbsp;Remote areas - Tuen Mun, Tai Lam, Ting Kau / Sham Tseng, Tin Shui Wan, Kam Tin, Yuen Long</p>
+      </ul><br>
+
+      <p>*SHIPPING FEE FOR <b><i>8-16 FEB</i></b> PERIOD</p>
+      <ul>
+      <li>Hong Kong Island - $250</li>
+      <li>Kowloon - $250</li>
+      <li>New Territories - $350</li>
+      <li>Remote areas & outlying islands - $450</li>
+      <p>Specific Islands - Tung Chung, Airport, Discovery Bay, Disneyland, Ma Wan</p>
+      <p>Remote areas - Tuen Mun, Tai Lam, Ting Kau / Sham Tseng, Tin Shui Wan, Kam Tin, Yuen Long</p>
+      </ul>
+      <br>
+      <button type="button" class="collapsible">Remarks</button>
+      <div class="remarks">
+        <ul>
+          <li>Promotions are not applicable to delivery cost.</li><br>
+          <li>Delivery service is not available to all borders, restricted areas and outlying islands including Ping Chau, Cheung Chau, Mui Wo, Lamma Island.</li><br>
+          <li>Charge is for one delivery only. If the delivery is unsuccessful due to 1. the sender’s provision of incorrect or incomplete information 2. the receiver not being at the address provided (moved, out of town etc) 3. the concierge unwilling to sign for the order. Once the second delivery charge has been paid, we will deliver the order on the next available date. </li><br>
+        </ul>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="container">
+    <div class="catagory">
+      <div class="footer">
+        <div class="logo">
+          <a href="index.html"><img src="image/image1.png"></a>
+        </div>
+      </div>
+      <div class="footer">
+        <label for="kit_email"><b>Keep in touch</b></label>
+        <br>
+        <div class="keepintouch">
+          <form id="kit_email">
+            <input type="email" name="kit_email" id="kit_email" placeholder="Enter your email">
+            <button type="submit" value="Subscribe" onclick="thankyou()"><img src="image/paper-plane.png"></button>
+          </form>
+          <br>
+          <a href="https://www.facebook.com/" class="dropdown-item" target="_blank">
+            <img src="image/fb_icon.png" style="width: 25px; height: 25px" alt="Facebook" title="Facebook" />
+          </a>
+          <a href="https://www.instagram.com/" class="dropdown-item" target="_blank">
+            <img src="image/ig_icon.png" style="width: 25px; height: 25px" alt="Instagram" title="Instagram" />
+          </a>
+        </div>
+      </div>
+      <div class="footer">
+        <span><b>Online Purchase</b></span>
+        <ul>
+          <li><a href="">Promotion</a></li>
+          <li><a href="orderDelivery.html">Order & Delivery</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="footer">
+        <span><b>About Company</b></span>
+        <ul>
+          <li><a href="ourstory.html">About Us</a></li>
+          <li><a href="corporateOrder.html">Corporate Order</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="termsNConditions.html">Terms & Condition</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+
+    function thankyou() {
+      window.open("greeting1.html"); // Replace with your desired URL
+    };
+
+    function displayProd(name) {
+      let opt = document.getElementsByClassName("optAll");
+      var prodSearched = false;
+      var j;
+      for (j = 0; j < opt.length; j++) {
+        if (opt[j].classList.contains(name)) {
+          prodSearched = true;
+          if (opt[j].style.display === "block") {
+            continue;
+          } else {
+            opt[j].style.display = "block";
+          }
+        } else {
+          opt[j].style.display = "none";
+        }
+      }
+      j = j - 1;
+      if (prodSearched) {
+        opt[j].style.display = "none";
+      } else {
+        opt[j].style.display = "block";
+      }
+    };
+  </script>
+</body>
+
+</html>
